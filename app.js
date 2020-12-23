@@ -23,6 +23,9 @@ class Products {
 
 class Storage {
   static saveProducts(products) {
+    products.forEach((product) => {
+      console.log(product.id);
+    });
     localStorage.setItem("Products", JSON.stringify(products));
   }
 }
