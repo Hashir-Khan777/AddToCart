@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+}
+
+.main_header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.car_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  width: 300px;
+  border: 1px solid black;
+  padding: 5px;
+  transition: all 0.3s linear;
+  margin-bottom: 10px;
+}
+
+.card_image > figure {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+}
+
+.card_image > figure > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about_info h1 {
+  margin: 10px 0;
+}
+
+.about_info p {
+  margin: 0 0 10px 0;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.button button {
+  height: 30px;
+  width: 100px;
+  background: transparent;
+  border: none;
+  color: black;
+  font-weight: 700;
+  background: aqua;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.button button:hover {
+  border: 1px solid aqua;
+  background: transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.cart_main > h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.cart_product_items {
+  margin: 20px 0;
+}
+
+.cart_card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cart_card_image_about_info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart_card_image figure {
+  position: relative;
+  width: 10vh;
+  height: 10vh;
+}
+
+.cart_card_image figure img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
