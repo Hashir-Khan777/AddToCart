@@ -37,7 +37,13 @@ class Storage {
         for (var i = 0; i < item_id.length; i++) {
           for (var j = 0; j < cart[0].length; j++) {
             if (event_id == item_id[i] && event_id == cart[0][j].id) {
-              localStorage.setItem("Product", JSON.stringify([cart[0][j]]));
+              var new_item = cart[0][j];
+              if (localStorage.getItem("Product") == null) {
+                localStorage.setItem("Product", "[]");
+              }
+              var old_item = JSON.parse(localStorage.getItem("Product"));
+              old_item.push(new_item);
+              localStorage.setItem("Product", JSON.stringify(old_item));
             }
           }
         }
