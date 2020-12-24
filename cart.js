@@ -5,7 +5,7 @@ const product = JSON.parse(localStorage.getItem("Product"));
 let result = "";
 product.forEach((element) => {
   result += `
-      <li class="cart_product_items" data-id=${element.id}>
+      <li class="cart_product_items">
       <div class="cart_card">
         <div class="cart_card_image_about_info">
           <div class="cart_card_image">
@@ -21,7 +21,7 @@ product.forEach((element) => {
         </div>
 
         <div class="remove_btn">
-          <button>Remove</button>
+          <button class="item_remove_button" data-id=${element.id}>Remove</button>
         </div>
       </div>
     </li>
