@@ -1,6 +1,6 @@
 const cart_list = document.querySelector(".cart_products");
 
-const product = JSON.parse(localStorage.getItem("Products"));
+const product = JSON.parse(localStorage.getItem("Product"));
 
 let result = "";
 product.forEach((element) => {

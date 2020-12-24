@@ -27,7 +27,6 @@ class Products {
 
 class Storage {
   static saveProducts(products) {
-    localStorage.setItem("Products", JSON.stringify(products));
     products.forEach((item) => {
       item_id.push(item.id);
     });
@@ -35,8 +34,10 @@ class Storage {
       button.addEventListener("click", (event) => {
         var event_id = event.target.getAttribute("data-id");
         for (var i = 0; i < item_id.length; i++) {
-          if (event_id == item_id[i]) {
-            console.log("event id ==>", event_id, "item id ==>", item_id[i]);
+          for (var j = 0; j < cart[0].length; j++) {
+            if (event_id == item_id[i] && event_id == cart[0][j].id) {
+              localStorage.setItem("Product", JSON.stringify([cart[0][j]]));
+            }
           }
         }
       });
