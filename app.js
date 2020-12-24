@@ -2,6 +2,8 @@ const car_cards = document.querySelector(".car_cards");
 const cart_products = document.querySelector(".cart_products");
 const cart_buttons = document.querySelectorAll(".cart_button");
 
+let cart = [];
+
 class Products {
   async getProducts() {
     try {
@@ -14,6 +16,7 @@ class Products {
         const image = Items.fields.image.url;
         return { title, price, id, image };
       });
+      cart = [products];
       return products;
     } catch (error) {
       console.log(error);
@@ -23,9 +26,6 @@ class Products {
 
 class Storage {
   static saveProducts(products) {
-    products.forEach((product) => {
-      console.log(product.id);
-    });
     localStorage.setItem("Products", JSON.stringify(products));
   }
 }
