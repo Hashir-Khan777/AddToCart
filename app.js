@@ -3,6 +3,7 @@ const cart_products = document.querySelector(".cart_products");
 const cart_buttons = document.querySelectorAll(".cart_button");
 
 let cart = [];
+let item_id = [];
 
 class Products {
   async getProducts() {
@@ -27,6 +28,19 @@ class Products {
 class Storage {
   static saveProducts(products) {
     localStorage.setItem("Products", JSON.stringify(products));
+    products.forEach((item) => {
+      item_id.push(item.id);
+    });
+    cart_buttons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        var event_id = event.target.getAttribute("data-id");
+        for (var i = 0; i < item_id.length; i++) {
+          if (event_id == item_id[i]) {
+            console.log("event id ==>", event_id, "item id ==>", item_id[i]);
+          }
+        }
+      });
+    });
   }
 }
 
