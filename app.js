@@ -32,6 +32,7 @@ class Storage {
     });
     cart_buttons.forEach((button) => {
       button.addEventListener("click", (event) => {
+        alert("Item has been added to cart");
         var event_id = event.target.getAttribute("data-id");
         for (var i = 0; i < item_id.length; i++) {
           for (var j = 0; j < cart[0].length; j++) {
